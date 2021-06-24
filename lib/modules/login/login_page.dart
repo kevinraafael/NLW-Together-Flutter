@@ -37,7 +37,7 @@ class _LoginaPageState extends State<LoginPage> {
                       height: 273,
                     )),
                 Positioned(
-                    bottom: 200,
+                    bottom: 120,
                     left: 0,
                     right: 0,
                     child: Column(
@@ -52,7 +52,12 @@ class _LoginaPageState extends State<LoginPage> {
                               textAlign: TextAlign.center,
                               style: TextStyles.titleHome),
                         ),
-                        SocialoginButton()
+                        Padding(
+                            padding: const EdgeInsets.only(
+                                top: 40, left: 40, right: 40),
+                            child: SocialoginButton(onTap: () {
+                              print("clicou");
+                            }))
                       ],
                     ))
               ],
