@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:payflow/app_widget.dart';
 
 void main() {
-  runApp(AppFirebase());
+  runApp(AppWidget());
 }
 
 class AppFirebase extends StatefulWidget {
@@ -13,36 +13,13 @@ class AppFirebase extends StatefulWidget {
 }
 
 class _AppFirebaseState extends State<AppFirebase> {
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  //final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      // Initialize FlutterFire:
-      future: _initialization,
-      builder: (context, snapshot) {
-        // Check for errors
-        if (snapshot.hasError) {
-          return Material(
-            child: Center(
-              child: Text(
-                "Nao foi possivel inicializar o firebase",
-                textDirection: TextDirection.ltr,
-              ),
-            ),
-          );
-        }
-        // Once complete, show your application
-        else if (snapshot.connectionState == ConnectionState.done) {
-          return AppWidget();
-        } else {
-          return Material(
-            child: Center(
-              child: CircularProgressIndicator(),
-            ),
-          );
-        }
-      },
-    );
+    return AppWidget(
+        // Initialize FlutterFire:
+
+        );
   }
 }

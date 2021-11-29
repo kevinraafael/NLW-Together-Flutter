@@ -35,23 +35,29 @@ class _HomePageState extends State<HomePage> {
             color: AppColors.primary,
             child: Center(
               child: ListTile(
-                title: Text.rich(TextSpan(
+                title: Text.rich(
+                  TextSpan(
                     text: "Olá, ",
                     style: TextStyles.titleRegular,
                     children: [
                       TextSpan(
                           text: "Kevin", style: TextStyles.titleBoldBackground)
-                    ])),
+                    ],
+                  ),
+                ),
                 subtitle: Text(
                   "Mantenha suas contas em dia",
                   style: TextStyles.captionShape,
                 ),
                 trailing: Container(
-                  height: 48,
-                  width: 48,
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(5)),
+                  height: 70,
+                  width: 70,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      AppImages.me,
+                    ),
+                  ),
                 ),
               ),
             )),
